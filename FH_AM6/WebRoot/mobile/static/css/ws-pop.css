@@ -1,0 +1,72 @@
+﻿@charset "utf-8";
+/*弹窗*/
+.modal {width: 80%; position: fixed; z-index: 10; left: 50%; margin-left: -40%; margin-top: 0; top: 50%; text-align: center; border-radius: 0.06rem; opacity: 1; -webkit-transition-duration: 400ms; transition-duration: 400ms; -webkit-transform: translate3d(0, 0, 0) scale(1); transform: translate3d(0, 0, 0) scale(1); color: #585858; display:none; margin-top: -25%;}
+.modal-inner { padding: 0.2rem; border-radius: 0.1rem 0.1rem 0 0; position: relative; background: #fff;}
+.modal-inner .modal-text { width:100%; height:.5rem; text-align:left; line-height:.5rem; border-bottom:.02rem solid #f0f0f0; font-size:.24rem;}
+.modal-inner ul { width:100%; height:1.2rem; box-sizing: border-box;  padding:.3rem 0; margin:0 auto; }
+.modal-inner ul li { width:25%; box-sizing:border-box; display:inline-block; float:left; border-right:1px solid #f0f0f0; text-align:center;}
+.modal-inner ul::after { content:""; display:block; clear:both;}
+.modal-inner ul li i { font-size:.46rem;}
+.modal-inner ul li p { font-size:.16rem; text-align:center;}
+.modal-inner ul li:last-of-type { border:0;}
+.modal-inner:after { content: ''; position: absolute; left: 0; bottom: 0; right: auto; top: auto; height: .02rem; width: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
+.modal-buttons { height:.7rem; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;}
+.modal-buttons span:first-of-type::after {content: ''; position: absolute; right: 0; top: 0; left: auto; bottom: auto; width: .02rem; height: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%;}
+.modal-button:first-child { border-radius: 0 0 0 0.1rem;}
+.modal-button { width: 100%; padding: 0 0.25rem; height: .7rem; font-size: 0.24rem; line-height: .7rem; text-align: center; color: #42e0f6; background: #fff; display: block; position: relative; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; cursor: pointer; box-sizing: border-box; -webkit-box-flex: 1; -ms-flex: 1; letter-spacing:.1rem;}
+.modal-button:last-child {border-radius: 0 0 .1rem 0;}
+.modal-overlay {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 9; visibility: hidden; opacity: 0;}
+.modal-overlay-visible {visibility: visible; opacity: 1;}
+.ico-red { color:#eb4f38;}
+.ico-blue { color:#00dbf5;}
+.ico-orange { color:#ea8010;}
+/*筛选*/
+.order-sx-modal {width: 80%; position: absolute; z-index: 9999; left: 50%; margin-left: -40%; margin-top: 0; top: 50%; text-align: center; border-radius: 0.06rem; opacity: 1; -webkit-transition-duration: 400ms; transition-duration: 400ms; -webkit-transform: translate3d(0, 0, 0) scale(1); transform: translate3d(0, 0, 0) scale(1); color: #585858; display:none; margin-top: -35%;}
+.order-sx-modal-inner { padding: 0.2rem; border-radius: 0.1rem 0.1rem 0 0; position: relative; background: #fff;}
+.order-sx-modal-inner:after { content: ''; position: absolute; left: 0; bottom: 0; right: auto; top: auto; height: .02rem; width: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
+.order-sx-modal-inner .order-sx-modal-text { width:100%; height:.5rem; text-align:left; line-height:.5rem; border-bottom:.02rem solid #f0f0f0; font-size:.24rem;}
+.order-sx-modal-inner form { width:100%; height:.5rem; margin-top:.2rem;}
+.order-sx-modal-inner form label { display:inline-block; width:25%; height:.5rem; line-height:.5rem; float:left; font-size:.2rem;}
+.order-sx-modal-inner form select { display:inline-block; width:75%; height:.5rem; line-height:.5rem; float:right; box-sizing:border-box; font-size:.2rem; outline:none;}
+.order-sx-modal-inner form select option {display:inline-block; width:75%; height:.5rem; line-height:.5rem;  font-size:.2rem;}
+/*input.modal-text-input { box-sizing: border-box; height: .6rem; background: #fff; margin: 0; margin-top: 0.3rem; padding: 0 0.25rem; border: 1px solid #a0a0a0; border-radius: .06rem; width: 100%; font-size: 0.2rem; font-family: inherit; display: block; box-shadow: 0 0 0 rgba(0, 0, 0, 0); -webkit-appearance: none; -moz-appearance: none; appearance: none; outline:none;}*/
+.order-sx-modal-inner form input {display:inline-block; width:75%; height:.5rem; line-height:.5rem; float:right; box-sizing:border-box; font-size:.2rem; outline:none;}
+
+.order-sx-modal-buttons { height:.7rem; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;}
+.order-sx-modal-buttons span:first-of-type::after {content: ''; position: absolute; right: 0; top: 0; left: auto; bottom: auto; width: .02rem; height: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%;}
+.order-sx-modal-button:first-child { border-radius: 0 0 0 0.1rem;}
+.order-sx-modal-button { width: 100%; padding: 0 0.25rem; height: .7rem; font-size: 0.24rem; line-height: .7rem; text-align: center; color: #42e0f6; background: #fff; display: block; position: relative; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; cursor: pointer; box-sizing: border-box; -webkit-box-flex: 1; -ms-flex: 1; letter-spacing:.1rem;}
+.order-sx-modal-button:last-child {border-radius: 0 0 .1rem 0;}
+
+/*添加*/
+.tj-modal {width: 80%; position: fixed; z-index: 9999; left: 50%; margin-left: -40%; margin-top: 0; top: 50%; text-align: center; border-radius: 0.06rem; opacity: 1; -webkit-transition-duration: 400ms; color: #585858; display:none; margin-top: -35%;}
+.tj-modal-inner {border-radius: 0.1rem 0.1rem 0 0; position: relative; background: #fff; box-sizing:border-box; padding-bottom:.2rem;}
+.tj-modal-inner:after { content:""; position: absolute; left: 0; bottom: 0; right: auto; top: auto; height: .02rem; width: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
+.tj-modal-inner .tj-modal-text { width:100%; height:.8rem; box-sizing:border-box; text-align:left; line-height:.5rem; color:#fff; border-bottom:.02rem solid #f0f0f0; font-size:.24rem; padding: 0.15rem .2rem;  border-radius: 0.1rem 0.1rem 0 0; background-color:#00dbf5;}
+.tj-modal-inner .ffrom { width:100%; margin-top:.2rem; box-sizing:border-box; padding-right:.2rem; padding-left:.1rem;}
+.tj-modal-inner .ffrom label { display:inline-block; width:25%; height:.5rem; line-height:.5rem; float:left; font-size:.2rem;}
+.tj-modal-inner .ffrom input {display:inline-block; width:75%; height:.5rem; line-height:.5rem; float:right; box-sizing:border-box; font-size:.2rem; outline:none; border:.02rem solid #707070; padding: .1rem .2rem; border-radius: 0.06rem; -webkit-border-radius: 0.06rem; -moz-border-radius: 0.06rem;}
+.tj-modal-inner .ffrom select {display:inline-block; width:75%; height:.5rem; line-height:.5rem; float:right; box-sizing:border-box; font-size:.2rem; outline:none; border:.02rem solid #707070; padding: .1rem .2rem; border-radius: 0.06rem; -webkit-border-radius: 0.06rem; -moz-border-radius: 0.06rem;}
+.tj-modal-inner .ffrom textarea {width: 75%; box-sizing: border-box; font-size: .2rem; color: #4b4b4b; float: right; border-radius: 0.06rem; -webkit-border-radius: 0.06rem; -moz-border-radius: 0.06rem;    border: .02rem solid #707070; padding: .1rem .2rem; line-height: .26rem; background-color: rgba(255,255,255,.1); outline: none; overflow-x: hidden;}
+.tj-modal-inner .ffrom::after { content:""; display:block; clear:both;}
+.tj-modal-buttons { height:.7rem; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;}
+.tj-modal-buttons span:first-of-type::after {content:""; position: absolute; right: 0; top: 0; left: auto; bottom: auto; width: .02rem; height: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%;}
+.tj-modal-button:first-child { border-radius: 0 0 0 0.1rem;}
+.tj-modal-button { width: 100%; padding: 0 0.25rem; height: .7rem; font-size: 0.24rem; line-height: .7rem; text-align: center; color: #42e0f6; background: #fff; display: block; position: relative; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; cursor: pointer; box-sizing: border-box; -webkit-box-flex: 1; -ms-flex: 1; letter-spacing:.1rem;}
+.tj-modal-button:last-child {border-radius: 0 0 .1rem 0;}
+
+/*编辑*/
+.bj-modal {width: 80%; position: fixed; z-index: 9999; left: 50%; margin-left: -40%; margin-top: 0; top: 50%; text-align: center; border-radius: 0.06rem; opacity: 1; -webkit-transition-duration: 400ms; color: #585858; display:none; margin-top: -35%;}
+.bj-modal-inner { width:100%; border-radius: 0.1rem 0.1rem 0 0; position: relative; background: #fff; box-sizing:border-box; padding-bottom:.2rem;}
+.bj-modal-inner:after { content:""; position: absolute; left: 0; bottom: 0; right: auto; top: auto; height: .02rem; width: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
+.bj-modal-inner .bj-modal-text { width:100%; height:.8rem; box-sizing:border-box; background-color:#00dbf5; text-align:left; line-height:.5rem; border-bottom:.02rem solid #f0f0f0; font-size:.24rem; color:#fff; padding: 0.15rem .2rem;  border-radius: 0.1rem 0.1rem 0 0;}
+.bj-modal-inner form { width:100%; margin-top:.2rem; box-sizing:border-box; padding-right:.2rem; padding-left:.1rem;}
+.bj-modal-inner form label { display:inline-block; width:25%; height:.5rem; line-height:.5rem; float:left; font-size:.22rem;}
+.bj-modal-inner form input {display:inline-block; width:75%; height:.5rem; line-height:.5rem; float:right; box-sizing:border-box; font-size:.2rem; outline:none; border:.02rem solid #707070; padding: .1rem .2rem; border-radius: 0.06rem; -webkit-border-radius: 0.06rem; -moz-border-radius: 0.06rem; color:#585858;}
+.bj-modal-inner form textarea {width: 75%; box-sizing: border-box; font-size: .2rem; color:#585858; float: right; border-radius: 0.06rem; -webkit-border-radius: 0.06rem; -moz-border-radius: 0.06rem;    border: .02rem solid #707070; padding: .1rem .2rem; line-height: .26rem; background-color: rgba(255,255,255,.1); outline: none; overflow-x: hidden;}
+.bj-modal-inner form::after { content:""; display:block; clear:both;}
+.bj-modal-buttons { height:.7rem; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;}
+.bj-modal-buttons span:first-of-type::after {content: ''; position: absolute; right: 0; top: 0; left: auto; bottom: auto; width: .02rem; height: 100%; background-color: #f0f0f0; display: block; z-index: 15; -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%;}
+.bj-modal-button:first-child { border-radius: 0 0 0 0.1rem;}
+.bj-modal-button { width: 100%; padding: 0 0.25rem; height: .7rem; font-size: 0.24rem; line-height: .7rem; text-align: center; color: #42e0f6; background: #fff; display: block; position: relative; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; cursor: pointer; box-sizing: border-box; -webkit-box-flex: 1; -ms-flex: 1; letter-spacing:.1rem;}
+.bj-modal-button:last-child {border-radius: 0 0 .1rem 0;}

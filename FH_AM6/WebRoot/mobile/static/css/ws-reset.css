@@ -1,0 +1,26 @@
+@charset "utf-8";
+html {font-size: 625%;}
+ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td, span{padding:0;margin:0;}
+body {
+	margin:0px;
+	font-size:.16rem;
+	color:#8a8a8a;
+	font-family: "Microsoft Yahei","SimSun";
+	background-color:#f0f0f0;
+}
+div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,pre,form,fieldset,input,textarea,p,blockquote{margin:0;padding:0;}
+img {display:block; max-width: 100%;}
+ol,li{margin:0;padding:0; list-style-type:none;}
+figure,figcaption {box-sizing:border-box;}
+.left{ float:left;}
+.mid{margin:0px auto;}
+.right{float:right;}
+a{ text-decoration:none; color:#8a8a8a;}
+.cl { clear:both;}
+/* 1.去除android a/button/input标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
+a,button,input,ul,li{-webkit-tap-highlight-color:rgba(255,0,0,0); -webkit-tap-highlight-color: transparent;}
+/*loading*/
+.loading {width:100%; height:100%; position:fixed; color:#00dbf5; text-align:center; font-size:.16rem;}
+
+
+

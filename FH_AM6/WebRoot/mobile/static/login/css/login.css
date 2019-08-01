@@ -1,0 +1,80 @@
+@charset "utf-8";
+/*reset*/
+body,button,input,select,textarea{font:100%/1 STHeitiSC,"Helvetica Neue",Helvetica,STHeiTi,"Microsoft YaHei";}
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,article,aside,footer,header,hgroup,nav,section,menu{margin:0; padding:0;-webkit-text-size-adjust:100%;font-size: 100%;}
+em,i{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+img{border:0;}
+input,img{vertical-align:middle;outline-style: none;}
+article,aside,footer,header,hgroup,nav,section,menu{display:block;}
+a{text-decoration:none;}
+a,input{-webkit-tap-highlight-color:rgba(0,0,0,0);tap-highlight-color:rgba(0,0,0,0);outline:none;}
+html,body{height: 100%;}
+/*common*/
+.m_txtF{color:#ff0000;}
+.mobileSina .icon{display: inline-block;background: url(/images/signin/icon.png) no-repeat;background-size: 4.6875em;vertical-align: middle;}
+/*头部*/
+.mobileSina .login_header{text-align: center;position: relative;padding: .8125rem .8125rem 0;}
+.mobileSina .btn_back{width: 2.75em;height: 2.75em;position: absolute;left: 0;top: .2625em;text-align: left;}
+.mobileSina .ico_back{width: .8125em;height: 1.3125em;margin: .8em 0 0 .8125em;}
+.mobileSina .prompt{line-height: 1.066em;padding-top: 1.3rem;font-weight: normal;}
+.mobileSina .login_main{padding: .8rem 1.875rem 2.875rem;}
+/*表单*/
+.mobileSina .info{overflow:hidden;}
+.mobileSina .info li{border-bottom: 1px solid #bdd5ee;height: 2.78em;}
+.mobileSina .info input{width: 100%;height: 100%;border:none;background-color:transparent;padding-left: .315rem;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.mobileSina .info ::-webkit-input-placeholder{color:#979797;}
+.mobileSina .info input:-moz-placeholder{color:#979797;}
+.mobileSina .photo_main{display: block;}
+
+/*btn*/
+.mobileSina .btn_login{display: inline-block;width: 100%;padding: .855em 0;text-align: center;font-size: 1.25em;background: #3a8ce1;margin-top: 1.54375rem;letter-spacing: .38em;}
+.mobileSina .btn_logining{background: rgba(58,140,225,.6);}
+.mobileSina .bar{overflow: hidden;}
+.mobileSina .bar3rd{overflow: hidden; padding: 1.562em 0; font-size: .875em;}
+.mobileSina .bar3rd a:first-child{ margin-right: 20px;}
+.mobileSina .bar_reg,.mobileSina .bar_fgpw{padding: .1rem 0 .875rem;margin: .42rem 0 .4375rem;font-size: .875em;}
+.mobileSina .bar_reg{float: left;}
+.mobileSina .bar_fgpw{float: right;}
+.mobileSina .btn_weibo{display: inline-block;width: 100%;height: 3.28em;line-height: 3.28em;background: #ffd647;text-align: center;overflow: hidden;}
+.mobileSina .btn_weibo span{float: left;width: 3.28em;height: 100%;background: #ffe27b;text-align: center;}
+.mobileSina .btn_weibo em{font-size: 1.25em;}
+.mobileSina .ico_weibo{width: 2.473em;height: 1.875em;background-position: -1.875em 0;}
+.mobileSina .login_main .link_reg{padding: .805rem 0;text-align: center;font-size: .875em;}
+
+.mobileSina .bar3rd .icon.forQQ {
+  background-position: 0 -62px;
+}
+.mobileSina .bar3rd .icon.forUC {
+  background-position: 0 -85px;
+}
+
+/*字体颜色*/
+.skin_weibo h2.prompt,
+.skin_weibo .login_main .bar a,
+.skin_weibo p.link_reg a{color: #facd66;}
+.mobileSina .photo_cur .user_name,
+.login_succ .succ_info,
+.login_info .err_txt{color: #000000;}
+.skin_weibo .photo_cur .user_name,
+.skin_weibo .info input,
+.mobileSina .verify_m a.verify_wait,
+.mobileSina .verify_m .verify_btn,
+.mobileSina .btn_login,
+.skin_weibo p.link_reg,
+.mobileSina_err .err_info,
+.mobileSina_err .err_btn .btn_l,
+.mobileSina_err .err_btn .btn_r{color: #ffffff;}
+.skin_weibo .verify_m .verify_btn,
+.skin_weibo .btn_login,
+.mobileSina .btn_weibo{color: #333333;}
+.mobileSina .bar a,
+.mobileSina .link_reg a,
+.mobileSina .bar3rd a,
+.login_succ .succ_main .m_txtB a{color: #2276cd;}
+.mobileSina .prompt,
+.mobileSina .link_reg,
+.login_succ .succ_main .m_txtB{color: #979797;}
+.mobileSina .btn_logining{color: rgba(255,255,255,.6);}
+.skin_weibo .btn_logining{color: rgba(51,51,51,.7);}
+
