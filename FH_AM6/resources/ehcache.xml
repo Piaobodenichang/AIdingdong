@@ -15,7 +15,7 @@
             memoryStoreEvictionPolicy="LRU"  
             /> 
       <!--  
-    name：Cache的唯一标识  奥术大师多
+    name：Cache的唯一标识  
     maxElementsInMemory：内存中最大缓存对象数  
     maxElementsOnDisk：磁盘中最大缓存对象数，若是0表示无穷大  
     eternal：Element是否永久有效，一但设置了，timeout将不起作用  
