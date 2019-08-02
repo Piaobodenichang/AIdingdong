@@ -143,5 +143,11 @@ public class PageData extends HashMap implements Map{
 		// TODO Auto-generated method stub
 		return map.values();
 	}
+
+    @Override
+    public String toString() {
+        return "PageData [map=" + map + "]";
+    }
+	
 	
 }

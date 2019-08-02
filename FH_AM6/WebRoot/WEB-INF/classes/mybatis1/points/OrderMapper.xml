@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderMapper">
+	
+	<!--表名 -->
+	<sql id="tableName">
+		PO_ORDER
+	</sql>
+	
+	<!--数据字典表名 -->
+	<sql id="dicTableName">
+		SYS_DICTIONARIES
+	</sql>
+	
+	<!-- 字段 -->
+	<sql id="Field">
+		f.ORDER_TIME,	
+		f.STATUS,	
+		f.USER_ID,	
+		f.GOODS_ID,	
+		f.ORDER_ID
+	</sql>
+	<!-- 字段 -->
+	<sql id="Uield">
+		f.NAME,	
+
+	</sql>
+	
+	<!-- 字段用于新增 -->
+	<sql id="Field2">
+		ORDER_TIME,	
+		STATUS,	
+		USER_ID,	
+		GOODS_ID,	
+		ORDER_ID
+	</sql>
+	
+	<!-- 字段值 -->
+	<sql id="FieldValue">
+		#{ORDER_TIME},	
+		#{STATUS},	
+		#{USER_ID},	
+		#{GOODS_ID},	
+		#{ORDER_ID}
+	</sql>
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into 
+	<include refid="tableName"></include>
+		(
+	<include refid="Field2"></include>
+		) values (
+	<include refid="FieldValue"></include>
+		)
+	</insert>
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from
+		<include refid="tableName"></include>
+		where 
+			ORDER_ID = #{ORDER_ID}
+	</delete>
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update
+		<include refid="tableName"></include>
+		set 
+			STATUS = 1
+
+		where 
+			ORDER_ID = #{ORDER_ID}
+	</update>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+		<include refid="Field"></include>
+		from 
+		<include refid="tableName"></include> f
+		where 
+			f.ORDER_ID = #{ORDER_ID}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		SELECT a.NAME,a.PHONE,b.GOODS_NAME,a.ORDER_ID,a.ORDER_TIME,a.STATUS 
+		FROM (SELECT  f.ORDER_ID,f.ORDER_TIME,f.STATUS,s.NAME,s.PHONE 
+		FROM sys_user s JOIN po_order f ON s.user_id = f.USER_ID)a,
+		(SELECT f.ORDER_ID,g.GOODS_NAME FROM po_goods g JOIN 
+		po_order f ON g.GOODS_ID=f.GOODS_ID) b WHERE a.ORDER_ID=b.ORDER_ID
+		<if test="pd.keywords!= null and pd.keywords != ''"><!-- 关键词检索 -->
+			and
+				(
+					 a.NAME LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')
+					 or 
+					 a.PHONE LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%') 
+					 or
+					 b.GOODS_NAME LIKE CONCAT(CONCAT('%', #{pd.keywords}),'%')	
+				)
+		</if>
+		<if test="pd.STATUS != null and pd.STATUS != ''"><!-- 状态检索 -->
+			and a.STATUS=#{pd.STATUS} 
+		</if>
+		<if test="pd.lastStart!=null and pd.lastStart!=''"><!-- 登录时间检索 -->
+			and a.ORDER_TIME &gt;= #{pd.lastStart} 
+		</if>
+		<if test="pd.lastEnd!=null and pd.lastEnd!=''"><!-- 登录时间检索 -->
+			and a.ORDER_TIME &lt;= #{pd.lastEnd} 
+		</if>
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		SELECT a.NAME,a.PHONE,b.GOODS_NAME,a.ORDER_ID,a.ORDER_TIME,a.STATUS 
+		FROM (SELECT  f.ORDER_ID,f.ORDER_TIME,f.STATUS,s.NAME,s.PHONE 
+		FROM sys_user s JOIN po_order f ON s.user_id = f.USER_ID)a,
+		(SELECT f.ORDER_ID,g.GOODS_NAME FROM po_goods g JOIN 
+		po_order f ON g.GOODS_ID=f.GOODS_ID) b WHERE a.ORDER_ID=b.ORDER_ID
+	</select>
+	<!-- 通过Status获得列表(全部) -->
+	<select id="listAllByStatus" parameterType="pd" resultType="pd">
+		SELECT ORDER_ID 
+		FROM po_order  WHERE STATUS=1 OR STATUS=2
+	</select>
+	
+	<!-- 批量发货 -->
+	<update id="updateAll" parameterType="pd">
+		update
+		<include refid="tableName"></include>
+		set 
+			STATUS = 1
+		where 
+			ORDER_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+	<!-- fh313596790qq(青苔) -->
+</mapper>
